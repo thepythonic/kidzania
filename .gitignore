@@ -1,0 +1,16 @@
+#python specific
+*.pyc
+*.db
+*.sqlite3
+local_settings.py
+media/uploads
+media/
+/billybeez/static/
+## generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+
+
