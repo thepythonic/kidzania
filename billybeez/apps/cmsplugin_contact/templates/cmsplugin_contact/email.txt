@@ -1,5 +1,0 @@
-Please Reply to : {{user_name}}
-Email : {{user_email}}
-Mobile : {{user_mobile}}
-
-{{ data.content }}
