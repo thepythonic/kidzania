@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load cms_tags %}
+
+
+{% block content %}
+  	<div class="row">
+     	{% placeholder 'content_top' %}
+  	</div>
+  
+  
+      
+           <!--second row section-->
+    <section class="row-fluid" id="secondary-row">
+		<div class="span6 secondary first offset1" style="background-image:url({{ STATIC_URL }}img/kid1.jpeg)">
+               {% placeholder 'second_section_left' %}
+		</div>
+        <div class="secondary span4" style="margin-left:1px;">
+        		{% placeholder 'second_section_right' %}
+        </div>
+                      
+	</section>  
+      <!--end of secound row section-->
+
+  
+ 
+ 
+      <!--third row-->      
+    <section class="row-fluid" id="tertiary-row">
+        <div class="span11 offset1">
+        	<div class="tertiary span3">
+        		{% placeholder 'block_left'%}
+        	</div>
+              <div class="tertiary span3">
+            	{% placeholder 'block_middle_left'%}
+            </div>
+            <div class="tertiary span3">
+            	{% placeholder 'block_middle_right'%}
+            </div>
+            <div class="tertiary last span3">
+            	{% placeholder 'block_right'%}
+            </div>
+        </div>
+    </section>
+      
+     <!--end of third row-->
+
+     <!--small slider-->
+    <section class="row-fluid">
+    	<div id='partners'>
+	        {% placeholder 'block-bottom'%}
+	    </div>
+    </section>
+                
+      <!--end of small slider-->
+{% endblock %}

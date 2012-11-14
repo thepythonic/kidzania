@@ -1,0 +1,111 @@
+{% load cms_tags menu_tags sekizai_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{% page_attribute page_title %}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="{% page_attribute meta_description %}"/>
+    <meta name="keywords" content="{% page_attribute meta_keywords %}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="">
+    
+    <!-- Le styles -->
+    {% addtoblock "css" %}<link href="/static/css/bootstrap.css" rel="stylesheet">{% endaddtoblock %}
+    {% addtoblock "css" %}<link href="/static/css/bootstrap-responsive.css" rel="stylesheet">{% endaddtoblock %}
+    {% addtoblock "css" %}<link href="/static/css/style.css" rel="stylesheet">{% endaddtoblock %}
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    {% addtoblock "js" %}
+ 
+    {% endaddtoblock %}
+
+    {% block favicon %}
+      <!-- Le fav and touch icons -->
+      <link rel="shortcut icon" href="/static/ico/favicon.ico">
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/ico/apple-touch-icon-144-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/ico/apple-touch-icon-72-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" href="/static/ico/apple-touch-icon-57-precomposed.png">
+    {% endblock favicon %}
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    {% addtoblock "js" %}<script src="/static/js/jquery.js"></script>{% endaddtoblock %}
+    {% addtoblock "js" %}<script src="/static/js/bootstrap.min.js"></script>{% endaddtoblock %}
+    {% addtoblock "js" %}<script src="/static/js/bootstrap-transition.js"></script>{% endaddtoblock %}
+    {% addtoblock "js" %}<script src="/static/js/bootstrap-alert.js"></script>{% endaddtoblock %}
+    {% addtoblock "js" %}<script src="/static/js/bootstrap-modal.js"></script>{% endaddtoblock %}
+    {% addtoblock "js" %}<script src="/static/js/bootstrap-dropdown.js"></script>{% endaddtoblock %}
+    {% addtoblock "js" %}<script src="/static/js/bootstrap-scrollspy.js"></script>{% endaddtoblock %}
+    {% addtoblock "js" %}<script src="/static/js/bootstrap-tab.js"></script>{% endaddtoblock %}
+    {% addtoblock "js" %}<script src="/static/js/bootstrap-tooltip.js"></script>{% endaddtoblock %}
+    {% addtoblock "js" %}<script src="/static/js/bootstrap-popover.js"></script>{% endaddtoblock %}
+    {% addtoblock "js" %}<script src="/static/js/bootstrap-button.js"></script>{% endaddtoblock %}
+    {% addtoblock "js" %}<script src="/static/js/bootstrap-collapse.js"></script>{% endaddtoblock %}
+    {% addtoblock "js" %}<script src="/static/js/bootstrap-carousel.js"></script>{% endaddtoblock %}
+    {% addtoblock "js" %}<script src="/static/js/bootstrap-typeahead.js"></script>{% endaddtoblock %}
+
+  {% addtoblock "js" %}
+      <script>
+          $(function () {
+              $('#tablist a:first').tab('show');
+          })
+
+          $('#tablist a').live('click', function (e) {
+              e.preventDefault();
+              tab_id = '#tab-' + $(this).attr('id');
+              // load tab contant if tab is empty
+              if( !$.trim( $(tab_id).html() ).length ) {
+                  $.get( $(this).attr('link'), function(data){
+                      $(tab_id).html(data);
+                  });
+              }
+              $(this).tab('show');
+          });
+      </script>
+  {% endaddtoblock %}
+
+  {% render_block "css" %}
+  {% render_block "js" %}
+  </head>
+
+  <body>
+    <div id="background-image"></div>
+    <div id="main" class="container-fluid span10">
+    {% cms_toolbar %}
+    {% block header %}
+      <header class="row-fluid" id="header">
+        <div>
+            <a href="/en" id="logo" target="_self">Logo for KidZania Jaddah, KSA
+              <span id="logo-franchise-name">
+                Jeddah
+              </span>
+            </a>
+        </div>
+        {% block nav-menu %}
+        <div class="navbar">
+            <ul class="nav" >
+                {% show_menu 0 100 100 100 "menu.html" %}
+            </ul>
+        </div>
+        {% endblock nav-menu %}
+      </header>
+    {% endblock header %}
+
+   
+            {% block content %}
+            {% endblock content %}
+
+            {% block footer %}  
+              <!--footer-->
+              <footer class="row-fluid" id="footer">
+                 © 2012, KidZania, and all related characters and elements are trademarks of KidZania de México S.A. de C.V. All Rights Reserved.
+                <a href=" " target="_blank">Privacy Policy</a>
+              </footer>
+              <!--end of footer-->
+                    
+            {% endblock footer %}
+    </div>
+
+  </body>
+</html>

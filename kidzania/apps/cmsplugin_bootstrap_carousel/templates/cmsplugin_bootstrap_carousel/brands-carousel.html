@@ -1,0 +1,29 @@
+{% load sekizai_tags %}
+{% load counter %}
+{% addtoblock "js" %}
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#{{ instance.domid }}").carousel({interval: {{ instance.interval }}});
+});
+</script>
+{% endaddtoblock %}
+<div id="myCarousel" class="carousel slide">
+  <div class="carousel-inner">
+    {% for image in instance.images %}
+    {% counter  %}
+    {% if  forloop.first or   counter_var == 8 %}
+    {% counter reset %}
+    <div class="{% if forloop.first %}active {% endif %}item">
+      <ul class="all_row1">
+    {% endif %}
+          <li><img alt="{{ image.image.default_alt_text}}" src="{{ image.image.url }}"></li>
+    {% if counter_var == 7 %}
+      </ul>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+  <!-- Carousel nav -->
+   <a class="left carousel-control2" href="#myCarousel" data-slide="prev">&nbsp;</a>
+   <a class="right carousel-control3" href="#myCarousel" data-slide="next">&nbsp;</a>
+</div>
