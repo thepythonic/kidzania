@@ -10,7 +10,9 @@
     <meta name="author" content="">
     
     <!-- Le styles -->
+    
     {% addtoblock "css" %}<link href="/static/css/bootstrap.css" rel="stylesheet">{% endaddtoblock %}
+    {% addtoblock "css" %}<link href="/static/css/bootstrap-verticaltabs.css" rel="stylesheet">{% endaddtoblock %}
     {% addtoblock "css" %}<link href="/static/css/bootstrap-responsive.css" rel="stylesheet">{% endaddtoblock %}
     {% addtoblock "css" %}<link href="/static/css/style.css" rel="stylesheet">{% endaddtoblock %}
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -45,25 +47,6 @@
     {% addtoblock "js" %}<script src="/static/js/bootstrap-carousel.js"></script>{% endaddtoblock %}
     {% addtoblock "js" %}<script src="/static/js/bootstrap-typeahead.js"></script>{% endaddtoblock %}
 
-  {% addtoblock "js" %}
-      <script>
-          $(function () {
-              $('#tablist a:first').tab('show');
-          })
-
-          $('#tablist a').live('click', function (e) {
-              e.preventDefault();
-              tab_id = '#tab-' + $(this).attr('id');
-              // load tab contant if tab is empty
-              if( !$.trim( $(tab_id).html() ).length ) {
-                  $.get( $(this).attr('link'), function(data){
-                      $(tab_id).html(data);
-                  });
-              }
-              $(this).tab('show');
-          });
-      </script>
-  {% endaddtoblock %}
 
   {% render_block "css" %}
   {% render_block "js" %}
@@ -76,7 +59,7 @@
     {% block header %}
       <header class="row-fluid" id="header">
         <div>
-            <a href="/en" id="logo" target="_self">Logo for KidZania Jaddah, KSA
+            <a href="/" id="logo" target="_self">Logo for KidZania Jaddah, KSA
               <span id="logo-franchise-name">
                 Jeddah
               </span>

@@ -10,14 +10,14 @@ TEMPLATE_DEBUG = DEBUG
 PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Dalia Shaaban', 'kidzania@scitecs.com'),
 )
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_PASSWORD = 'scitecs123456'
 # TODO YF change email settings
-EMAIL_HOST_USER = 'dalia.shaaban@scitecs.com'
+EMAIL_HOST_USER = 'kidzania@scitecs.com'
 EMAIL_SUBJECT_PREFIX = 'kidzania - '
 EMAIL_USE_TLS = True
 
@@ -41,6 +41,7 @@ WRAPPER_PLUGIN_TEMPLATES = (
 TITLED_PLUGIN_TEMPLATES = (
     ('default.html', 'default'),
     ('kids.html', 'kids'),
+    ('tab.html', 'Tab'),
 )
 
 
@@ -109,6 +110,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    #'compressor.finders.CompressorFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -210,14 +212,18 @@ INSTALLED_APPS = (
     'cmsplugin_wrapper',                # CMSWrapperPlugin
     'cmsplugin_nivoslider',             # CMSSliderPlugin
     'custom_calendar',                  # CustomCalendarPlugin
+    'cmsplugin_facebook',               #FacebookLikeBoxPlugin or FacebookLikeBoxPlugin
+    'cmsplugin_titledimage',            #TitledImage
 )
 
 
 CMS_TEMPLATES = (
     ('home.html', 'Home'),
-    ('plan.html', 'Plan your visit'),
+    ('direction.html', 'Information'),
     ('play.html', 'Playground'),
-    ('tab.html', 'Tab Template'),
+    ('tabs.html', 'Tab Template'),
+    ('404.html', 'Page Not Found Template'),
+    ('500.html', 'Internal Server Error Template'),
 )
 
 #http://django-filer.readthedocs.org/en/latest/installation.html#subject-location-aware-cropping
@@ -265,7 +271,7 @@ CMS_SEO_FIELDS = True
 
 CMS_PLACEHOLDER_CONF = {
     'content_top': {
-        'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'CarouselPlugin', 'CMSWrapperPlugin'],
+        'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'CarouselPlugin', 'CMSWrapperPlugin','TitledImagePlugin'],
         'name':gettext("Content Top"),
     },
     'content_center': {

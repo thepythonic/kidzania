@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load cms_tags %}
+
+
+{% block content %}
+    <div class="container-fluid" style=" margin-top:60px; height:700px;">
+    	{%placeholder 'content'%}
+      <div class="span3 offset1">
+          <img src="{{ STATIC_URL }}img/404Error.jpg" />
+      </div>
+      <div class="span4">
+        <h3>This page has disappeared!</h3>
+        <p>
+          Sorry but the page you are looking for cannot be found.
+          <a href="/">Home Page</a><br  />
+          <a href="/contact-us">Contact US</a>
+        </p>
+      </div>
+    </div>
+{% endblock %}
+
+
+
+
+
+     

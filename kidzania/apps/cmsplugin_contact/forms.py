@@ -1,14 +1,15 @@
 from django import forms
-#import settings
 from django.conf import settings
+from django.utils.translation import ugettext as _
+
 from cmsplugin_contact.nospam.forms import HoneyPotForm, RecaptchaForm, AkismetForm
   
 class ContactForm(forms.Form):
-    name = forms.CharField()
-    email = forms.EmailField()
-    mobile = forms.CharField()
+    name = forms.CharField(label= _('Name'), widget=forms.TextInput(attrs={'placeholder': _('Name')}))
+    email = forms.EmailField(label= _('Email'), widget=forms.TextInput(attrs={'placeholder': _('Email')}))
+    mobile = forms.CharField(label= _('Mobile'), widget=forms.TextInput(attrs={'placeholder': _('Mobile')}))
     subject = forms.ChoiceField(choices=settings.SUBJECT_CHOICHES)
-    content = forms.CharField(widget=forms.Textarea())
+    content = forms.CharField(label= _('Message'), widget=forms.Textarea(attrs={'placeholder': _('Message')}))
 
   
 class HoneyPotContactForm(HoneyPotForm):

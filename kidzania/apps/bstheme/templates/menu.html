@@ -1,7 +1,7 @@
 {% load menu_tags %}
 {% for child in children %}
-<li class="{% if child.selected %}active{% endif %} {% if child.children%}dropdown{% endif %}" {% if forloop.counter0 == 0%} id='nav_bar' {% endif %} >
-<a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}" id="nav_bar{% if forloop.counter0 != 0%}{{ forloop.counter0 }}{% endif %}"   {% if child.children%}class="dropdown-toggle" data-toggle="dropdown"{% endif %}>
+<li class=" {% if child.children%}dropdown{% endif %}" {% if forloop.counter0 == 0%} id='nav_bar' {% endif %} >
+<a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}" id="nav_bar{% if forloop.counter0 != 0%}{{ forloop.counter0 }}{% endif %}{% if child.selected %}_active{% endif %}"   {% if child.children%}class="dropdown-toggle" data-toggle="dropdown"{% endif %}>
 <span id="nav_bar{% if forloop.counter0 != 0%}{{ forloop.counter0 }}{% endif %}-franchise-name">
 {{ child.get_menu_title|cut:" " }}
 {% if child.children %}

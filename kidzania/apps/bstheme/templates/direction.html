@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load cms_tags %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row-fluid">
+         <div class="span10 offset1">
+    	   {% placeholder 'content_top' %}
+        </div>
+    </div>
+
+
+    <!--tabs group section -->
+    <!--second row section-->
+    <div class="row-fluid">
+        <div class="span3 offset1">
+            <ul class="nav tertiary"> <!--nav-tabs-->
+            {% for tab in request.current_page.children.all %}
+                <li {% if forloop.first %} class="active" {% endif %}>
+                    <div class="contact-icon">&nbsp;</div>
+                    <a href="#tab-{{ tab.get_slug }}" link="{{ tab.get_absolute_url }}" id="{{ tab.get_slug }}" data-toggle="tab">{{ tab.get_title }}</a>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+        <div class="span7">
+             <div class="tab-content">
+                {% for tab in request.current_page.children.all %}
+                    <div id="tab-{{ tab.get_slug }}" class="tab-pane fade {% if forloop.first %} in active {% endif %}">
+                            {% show_placeholder 'content_tab' tab.id %}
+                    </div>
+                {% endfor %}
+            </div> 
+        </div> 
+    </div>
+</div>
+{% endblock %}

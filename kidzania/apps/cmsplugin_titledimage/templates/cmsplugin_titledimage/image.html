@@ -1,0 +1,11 @@
+{% if link %}<a href="{{ link }}">{% endif %}
+<img alt="{% if instance.alt %}{{ instance.alt }}{% endif %}" src="{{ STATIC_URL }}/img/{{ instance.image }}"{% if instance.width %} width="{{ instance.width }}" {% endif %} {% if instance.height %} height="{{ instance.height }}"{% endif %}
+
+{% if instance.title %} title="{{ instance.title }}"{% endif %} />
+{% if link %}</a>{% endif %}
+
+<div class="dir-title">
+    <h4>{{ instance.title }}</h4>
+</div>
+
+

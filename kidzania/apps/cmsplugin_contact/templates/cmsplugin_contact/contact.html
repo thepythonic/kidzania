@@ -1,71 +1,68 @@
 {% load i18n %}
-
+<div class="span12">
 {% if form %}
-	<form action="." method="post">
-	<table><tr><td>
-		<p{% if form.name.errors %} class="error"{% endif %}>
-			<label class="contact_field">{{ contact.name_label }}</label>
-		</td>
-		<td>
-				{{ form.name }}
-			{% if form.name.errors %}
-				{% for error in form.name.errors %}
-					<span class="error_msg">{{ error }}</span>
-				{% endfor %}
-			{% endif %}
-		</p>
-		</td></tr>
-		<tr><td>
-		<p{% if form.email.errors %} class="error"{% endif %}>
-			<label class="contact_field">{{ contact.email_label }}</label>
-		</td>
-		<td>
-				{{ form.email }}
-			{% if form.email.errors %}
-				{% for error in form.email.errors %}
-					<span class="error_msg">{{ error }}</span>
-				{% endfor %}
-			{% endif %}
-		</p>
-		</td></tr>
-		<tr><td>
-		<p{% if form.mobile.errors %} class="error"{% endif %}>
-			<label class="contact_field">{{ contact.mobile_label }}</label>
-		</td>
-		<td>
-				{{ form.mobile }}
-			{% if form.mobile.errors %}
-				{% for error in form.mobile.errors %}
-					<span class="error_msg">{{ error }}</span>
-				{% endfor %}
-			{% endif %}
-		</p>
-		</td></tr>
-		<tr><td>
-		<p{% if form.subject.errors %} class="error"{% endif %}>
-			<label class="contact_field">{{ contact.subject_label }}</label>
-		</td>
-		<td>
-				{{ form.subject }}
-			{% if form.subject.errors %}
-				{% for error in form.subject.errors %}
-					<span class="error_msg">{{ error }}</span>
-				{% endfor %}
-			{% endif %}
-		</p>
-		</td></tr>
-		<tr><td>
-		<p{% if form.content.errors %} class="error"{% endif %}>
-			<label class="contact_field">{{ contact.content_label }}</label>
-		</td>
-		<td>
+	<form action="." method="post" class="form-horizontal">
+		<div class="control-group">
+            <div class="{% if form.name.errors %} error{% endif %} controls">
+               
+                {{ form.name }}
+				{% if form.name.errors %}
+					{% for error in form.name.errors %}
+						<span class="error_msg">{{ error }}</span>
+					{% endfor %}
+				{% endif %}
+            </div>
+        </div>  
+
+
+        <div class="control-group">
+            <div class="{% if form.email.errors %} error {% endif %} controls">
+               
+                {{ form.email }}
+				{% if form.email.errors %}
+					{% for error in form.email.errors %}
+						<span class="error_msg">{{ error }}</span>
+					{% endfor %}
+				{% endif %}
+            </div>
+        </div>            
+        
+        <div class="control-group">
+            <div class="{% if form.mobile.errors %} error {% endif %} controls">
+               
+                {{ form.mobile }}
+				{% if form.mobile.errors %}
+					{% for error in form.mobile.errors %}
+						<span class="error_msg">{{ error }}</span>
+					{% endfor %}
+				{% endif %}
+            </div>
+        </div>                           
+
+        <div class="control-group">
+			<div class="{% if form.subject.errors %} error {% endif %}  controls">
+			  	
+			  	{{ form.subject }}
+				{% if form.subject.errors %}
+					{% for error in form.subject.errors %}
+						<span class="error_msg">{{ error }}</span>
+					{% endfor %}
+				{% endif %}
+			</div>
+		</div>
+		
+		 <div class="control-group">
+			<div class=" {% if form.content.errors %} error {% endif %} controls">
 				{{ form.content }}
-			{% if form.content.errors %}
-				{% for error in form.content.errors %}
-					<span class="error_msg">{{ error }}</span>
-				{% endfor %}
-			{% endif %}
-		</p>
+				{% if form.content.errors %}
+					{% for error in form.content.errors %}
+						<span class="error_msg">{{ error }}</span>
+					{% endfor %}
+				{% endif %}
+			</div>
+		</div>
+				
+
 		{% if form.recaptcha_challenge_field %}
 			<div{% if form.recaptcha_response_field.errors %} class="error"{% endif %}>
 				{{ form.recaptcha_challenge_field }}
@@ -105,10 +102,10 @@
 			{{ form.accept_terms }}
 		{% endif %}
 	</table>
-		<p>
-			<input type="submit"{% if contact.submit %} value="{{ contact.submit }}"{% endif %} />
-			<input type="reset"{% if contact.reset %} value="{{ contact.reset }}"{% endif %} />
-		</p>
+	<div class="form-actions">
+        <button type="submit"  class="btn btn-primary sub-btn">{% if contact.submit %} {{ contact.submit }}{% endif %}</button>
+        <button type="reset"  class="btn btn-primary sub-btn">{% if contact.reset %} {{ contact.reset }}{% endif %}</button>
+   	</div>
 		
 		{% csrf_token %}
 	</form>
@@ -116,3 +113,6 @@
 {% else %}
 	{{ contact.thanks|safe }}
 {% endif %}
+</div>  
+
+                          

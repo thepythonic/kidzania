@@ -9,6 +9,9 @@ urlpatterns = patterns('',
     url(r'^', include('cms.urls')),
 )
 
+handler404 = 'kidzania.site_utils.handler404'
+handler500 = 'kidzania.site_utils.handler500'
+
 if settings.DEBUG:
     urlpatterns = patterns('',
     	url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
