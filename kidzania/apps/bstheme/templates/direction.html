@@ -23,7 +23,7 @@
             {% endfor %}
             </ul>
         </div>
-        <div class="span7">
+        <div class="span8 plan-box" style="margin-left: -33px">
              <div class="tab-content">
                 {% for tab in request.current_page.children.all %}
                     <div id="tab-{{ tab.get_slug }}" class="tab-pane fade {% if forloop.first %} in active {% endif %}">

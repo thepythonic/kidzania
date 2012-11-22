@@ -1,16 +1,17 @@
 {% load menu_tags %}
 {% for child in children %}
 <li class=" {% if child.children%}dropdown{% endif %}" {% if forloop.counter0 == 0%} id='nav_bar' {% endif %} >
-<a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}" id="nav_bar{% if forloop.counter0 != 0%}{{ forloop.counter0 }}{% endif %}{% if child.selected %}_active{% endif %}"   {% if child.children%}class="dropdown-toggle" data-toggle="dropdown"{% endif %}>
+<a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}" id="nav_bar{% if forloop.counter0 != 0%}{{ forloop.counter0 }}{% endif %}{% if child.selected %}_active{% endif %}"  
+ >
 <span id="nav_bar{% if forloop.counter0 != 0%}{{ forloop.counter0 }}{% endif %}-franchise-name">
 {{ child.get_menu_title|cut:" " }}
 {% if child.children %}
 	<b class="caret"></b>
 	</span>
 	</a>
-    <ul class="dropdown-menu">
+   <!-- <ul class="dropdown-menu">
         {% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
-    </ul>
+    </ul>-->
 {% else %}
 	</span>
 	</a>

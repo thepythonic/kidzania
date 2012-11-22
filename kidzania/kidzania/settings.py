@@ -35,13 +35,28 @@ CMS_PLUGIN_PROCESSORS = (
 
 WRAPPER_PLUGIN_TEMPLATES = (
     ('default.html', 'default'),
+    ('activities.html', 'Establishments'),
     ('template_1.txt', 'template_1'),
 )
 
 TITLED_PLUGIN_TEMPLATES = (
-    ('default.html', 'default'),
+    ('default.html', 'Default'),
+    ('default-without-image.html', 'Without Image Default'),
     ('kids.html', 'kids'),
     ('tab.html', 'Tab'),
+    ('side-block-activities.html', 'Activities Side Block'),
+    ('title-adjacent-text.html', 'Title adjacent to text'),
+    ('plan-sideblock.html', 'Plan your visit Side Block'),
+)
+
+TITLED__IMAGE_TEXT_PLUGIN_TEMPLATES = (
+    ('default.html', 'Default'),
+    ('default-without-image.html', 'Without Image Default'),
+    ('kids.html', 'kids'),
+    ('tab.html', 'Tab'),
+    ('side-block-activities.html', 'Activities Side Block'),
+    ('title-adjacent-text.html', 'Title adjacent to text'),
+    ('plan-sideblock.html', 'Plan your visit Side Block'),
 )
 
 
@@ -52,10 +67,10 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': os.path.join(PROJECT_PATH, 'dev.db'),                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'kidzania_dev',                      # Or path to database file if using sqlite3.
+        'USER': 'root',                      # Not used with sqlite3.
+        'PASSWORD': 'scitecskidzania',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
@@ -130,7 +145,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     
-    'multihost.middleware.MultiHostMiddleware',
+    #'multihost.middleware.MultiHostMiddleware',
 
     'cms.middleware.multilingual.MultilingualURLMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
@@ -214,11 +229,13 @@ INSTALLED_APPS = (
     'custom_calendar',                  # CustomCalendarPlugin
     'cmsplugin_facebook',               #FacebookLikeBoxPlugin or FacebookLikeBoxPlugin
     'cmsplugin_titledimage',            #TitledImage
+    #'cmsplugin_titledimagetext',        #TitledImageTextPlugin
 )
 
 
 CMS_TEMPLATES = (
     ('home.html', 'Home'),
+    ('activities.html', 'Activities'),
     ('direction.html', 'Information'),
     ('play.html', 'Playground'),
     ('tabs.html', 'Tab Template'),
@@ -271,15 +288,15 @@ CMS_SEO_FIELDS = True
 
 CMS_PLACEHOLDER_CONF = {
     'content_top': {
-        'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'CarouselPlugin', 'CMSWrapperPlugin','TitledImagePlugin'],
+        'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'CarouselPlugin','TitledPlugin', 'CMSWrapperPlugin','TitledImagePlugin','TitledImageTextPlugin'],
         'name':gettext("Content Top"),
     },
     'content_center': {
-        'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'TitledPlugin', 'CMSGalleryPlugin', 'Custom_Calendar'],
+        'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'TitledPlugin', 'CMSGalleryPlugin', 'Custom_Calendar','TitledImageTextPlugin'],
         'name':gettext("Content Center"),
     },
     'content_bottom': {
-        'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'TitledPlugin', 'ContactPlugin'],
+        'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'TitledPlugin', 'ContactPlugin','TitledImageTextPlugin'],
         'name':gettext("Content Bottom"),
     },
 }

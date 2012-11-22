@@ -17,7 +17,7 @@ class TitledImage(CMSPlugin):
     image      = FilerImageField(null=True, blank=True)
     img_height = models.PositiveSmallIntegerField(_("height"),default='166', editable=True, null=True)
     img_width  = models.PositiveSmallIntegerField(_("width"),default='763', editable=True, null=True)
-    alter      = models.TextField(_("Alt text"), blank=True)
+    alter      = models.TextField(_("Alt text/Description"), blank=True)
     
     def __unicode__(self):
         return self.title

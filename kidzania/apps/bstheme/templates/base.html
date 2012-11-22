@@ -14,6 +14,7 @@
     {% addtoblock "css" %}<link href="/static/css/bootstrap.css" rel="stylesheet">{% endaddtoblock %}
     {% addtoblock "css" %}<link href="/static/css/bootstrap-verticaltabs.css" rel="stylesheet">{% endaddtoblock %}
     {% addtoblock "css" %}<link href="/static/css/bootstrap-responsive.css" rel="stylesheet">{% endaddtoblock %}
+    {% addtoblock "css" %}<link href="/static/css/jquery.mCustomScrollbar.css"  rel="stylesheet">{% endaddtoblock %}
     {% addtoblock "css" %}<link href="/static/css/style.css" rel="stylesheet">{% endaddtoblock %}
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     {% addtoblock "js" %}
@@ -33,6 +34,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     {% addtoblock "js" %}<script src="/static/js/jquery.js"></script>{% endaddtoblock %}
+    {% addtoblock "js" %}<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>{% endaddtoblock %}
     {% addtoblock "js" %}<script src="/static/js/bootstrap.min.js"></script>{% endaddtoblock %}
     {% addtoblock "js" %}<script src="/static/js/bootstrap-transition.js"></script>{% endaddtoblock %}
     {% addtoblock "js" %}<script src="/static/js/bootstrap-alert.js"></script>{% endaddtoblock %}
@@ -46,6 +48,8 @@
     {% addtoblock "js" %}<script src="/static/js/bootstrap-collapse.js"></script>{% endaddtoblock %}
     {% addtoblock "js" %}<script src="/static/js/bootstrap-carousel.js"></script>{% endaddtoblock %}
     {% addtoblock "js" %}<script src="/static/js/bootstrap-typeahead.js"></script>{% endaddtoblock %}
+    {% addtoblock "js" %}<script src="/static/js/jquery.mousewheel.min.js"></script>{% endaddtoblock %}
+    {% addtoblock "js" %}<script src="/static/js/jquery.mCustomScrollbar.js"></script>{% endaddtoblock %}
 
 
   {% render_block "css" %}
@@ -86,8 +90,9 @@
                 <a href=" " target="_blank">Privacy Policy</a>
               </footer>
               <!--end of footer-->
-                    
+            
             {% endblock footer %}
+            
     </div>
 
   </body>

@@ -1,0 +1,26 @@
+<div class="wrap row-fluid">
+    <div class="span10 act-row2">
+        {% for plugin in plugins %}
+            {% if forloop.counter == 1 %}
+              <div class="span2">
+            {{ plugin|safe }}
+             </div>
+        {% else %}{% if forloop.counter == 2 %}
+             <div class="span2 act-air-title">
+                <h3>
+                    {{ plugin|safe }}  
+                 </h3>
+            </div>
+        {% else %}{% if forloop.counter == 3 %}
+            <div class="act-air-data">
+                {{ plugin|safe }}  
+            </div>
+        {% endif %}{% endif %}{% endif %}
+{% endfor %}
+</div> 
+</div> 
+
+                         
+                                         
+                                        
+                                        
