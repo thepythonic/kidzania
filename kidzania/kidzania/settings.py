@@ -61,7 +61,7 @@ TITLED__IMAGE_TEXT_PLUGIN_TEMPLATES = (
 
 
 
-
+JQUERY_JS = 'js/jquery.js'
 
 MANAGERS = ADMINS
 
@@ -229,6 +229,9 @@ INSTALLED_APPS = (
     'custom_calendar',                  # CustomCalendarPlugin
     'cmsplugin_facebook',               #FacebookLikeBoxPlugin or FacebookLikeBoxPlugin
     'cmsplugin_titledimage',            #TitledImage
+    
+    'form_designer',
+    'form_designer.contrib.cms_plugins.form_designer_form',
 )
 
 
