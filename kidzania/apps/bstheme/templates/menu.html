@@ -1,20 +1,20 @@
 {% load menu_tags %}
-{% for child in children %}
-<li class=" {% if child.children%}dropdown{% endif %}" {% if forloop.counter0 == 0%} id='nav_bar' {% endif %} >
-<a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}" id="nav_bar{% if forloop.counter0 != 0%}{{ forloop.counter0 }}{% endif %}{% if child.selected %}_active{% endif %}"  
- >
-<span id="nav_bar{% if forloop.counter0 != 0%}{{ forloop.counter0 }}{% endif %}-franchise-name">
-{{ child.get_menu_title|cut:" " }}
-{% if child.children %}
-	<b class="caret"></b>
-	</span>
-	</a>
-   <!-- <ul class="dropdown-menu">
-        {% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
-    </ul>-->
-{% else %}
-	</span>
-	</a>
-{% endif %}
-</li>
-{% endfor %}
+ {% for child in children %}
+ <li class=" {% if child.children%}dropdown{% endif %}" {% if forloop.counter0 == 0 and child.level == 0%} id='nav_bar' {% endif %} >
+<a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}" id="{% if forloop.counter0 != 0 and  child.level == 0 %}nav_bar{{ forloop.counter0 }}{% endif %}{% if forloop.counter0 == 0 and  child.level == 0 %}nav_bar{% endif %}{% if child.selected %}_active{% endif %}"   {% if child.children%}class="dropdown-toggle" data-toggle="dropdown"{% endif %}>
+ <span id="nav_bar{% if forloop.counter0 != 0 and  child.level == 0  %}{{ forloop.counter0 }}{% else %}{%if child.level != 0  %}-child{% endif %}{% endif %}-franchise-name">
+
+ {{ child.get_menu_title|capfirst  }}
+ {% if child.children %}
+ 	<b class="caret"></b>
+ 	</span>
+ 	</a>
+ <ul class="dropdown-menu">
+
+         {% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
+    </ul>
+ {% else %}
+ 	</span>
+ 	</a>
+ {% endif %}	
+ {% endfor %}	

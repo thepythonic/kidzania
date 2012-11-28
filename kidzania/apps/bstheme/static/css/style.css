@@ -340,7 +340,7 @@ font-size: 26px;
 /*margin-top: -8px;*/}
 
 #slide-show img{
-	margin-top: 25px;
+	margin-top: 15px;
 }
 #slide-show .carousel-inner{
 	width: 712px;
@@ -417,6 +417,54 @@ top: 50%;
 left: -7px;
 top: 50%;
 	}
+
+
+
+
+
+.dropdown-menu li > a:hover,
+.dropdown-menu li > a:focus,
+.dropdown-submenu:hover > a {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #99012f;
+  background-color: #c10141;
+  background-image:none;
+  background-image:none;
+  background-image:none;
+  background-image:none;
+  background-image:none;
+  background-repeat:no-repeat;
+  filter:none;
+}
+
+.navbar .nav li.dropdown > .dropdown-toggle .caret {
+border-top-color:white;
+border-bottom-color:white;}
+
+
+
+.dropdown-menu li:hover .sub-menu {
+    visibility: visible;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #slide-show_act figure {
 position: relative;

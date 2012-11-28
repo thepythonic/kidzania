@@ -229,7 +229,6 @@ INSTALLED_APPS = (
     'custom_calendar',                  # CustomCalendarPlugin
     'cmsplugin_facebook',               #FacebookLikeBoxPlugin or FacebookLikeBoxPlugin
     'cmsplugin_titledimage',            #TitledImage
-    #'cmsplugin_titledimagetext',        #TitledImageTextPlugin
 )
 
 
