@@ -197,8 +197,8 @@ position: absolute;
 color: white !important;
 text-align: center;
 top: 19px;
-right:155px;
-font-size: 20px;
+right:160px;
+font-size: 18px;
 height: 20px;
 overflow: hidden;
 font-family: arial;
@@ -213,7 +213,7 @@ color: white !important;
 text-align: center;
 top: 20px;
 right: 96px;
-font-size: 20px;
+font-size: 18px;
 height: 20px;
 overflow: hidden;
 font-family: arial;
@@ -228,7 +228,7 @@ color: white !important;
 text-align: center;
 top: 16px;
 right: 122px;
-font-size: 20px;
+font-size: 18px;
 height: 20px;
 overflow: hidden;
 font-family: arial;
@@ -422,6 +422,7 @@ top: 50%;
 
 
 
+
 .dropdown-menu li > a:hover,
 .dropdown-menu li > a:focus,
 .dropdown-submenu:hover > a {
@@ -453,9 +454,79 @@ border-bottom-color:white;}
 }
 
 
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
 
 
 
+
+/*dropdown menu bar*/
+.dropdown-menu {
+position: absolute;
+top: 55px;
+left: 0;
+z-index: 1000;
+float: left;
+min-width: 150px;
+padding: 5px 0;
+list-style: none;
+-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+background: #2E8F84;
+border: 2px solid white;
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;
+margin-left: -100px;
+}
+
+.dropdown-menu li{
+//border-top: 2px solid white;
+}
+
+.dropdown-submenu:hover > a {
+  color: #ffffff;
+  text-decoration: none;
+  background-color:none;
+  background-color:none;
+  background-image:none;
+  background-image:none;
+  background-image:none;
+  background-image:none;
+  background-image:none;
+  background-repeat:no-repeat;
+  filter:none;
+}
+.dropdown-menu .active > a,
+.dropdown-menu .active > a:hover{
+  color: #ffffff;
+  text-decoration: none;
+  background-color:none;
+  background-color:none;
+  background-image:none;
+  background-image:none;
+  background-image:none;
+  background-image:none;
+  background-image:none;
+  background-repeat:no-repeat;
+  filter:none;
+}
+
+.dropdown-menu a {
+display: block;
+padding: 0 0 0 5px;
+clear: both;
+font-weight: normal;
+line-height: 27px;
+color: white;
+white-space: nowrap;
+}
+/*end of dropdown menu bar*/
 
 
 

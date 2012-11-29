@@ -36,6 +36,7 @@ CMS_PLUGIN_PROCESSORS = (
 WRAPPER_PLUGIN_TEMPLATES = (
     ('default.html', 'default'),
     ('activities.html', 'Establishments'),
+    ('birthday.html', 'Image with paragraph'),
     ('template_1.txt', 'template_1'),
 )
 
@@ -229,14 +230,15 @@ INSTALLED_APPS = (
     'custom_calendar',                  # CustomCalendarPlugin
     'cmsplugin_facebook',               #FacebookLikeBoxPlugin or FacebookLikeBoxPlugin
     'cmsplugin_titledimage',            #TitledImage
-    
-    'form_designer',
+    'form_designer',    
     'form_designer.contrib.cms_plugins.form_designer_form',
+    'django.contrib.sitemaps',
 )
 
 
 CMS_TEMPLATES = (
     ('home.html', 'Home'),
+    ('main.html', 'Main'),
     ('activities.html', 'Activities'),
     ('direction.html', 'Information'),
     ('play.html', 'Playground'),

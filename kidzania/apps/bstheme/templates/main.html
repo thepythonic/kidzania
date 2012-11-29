@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load cms_tags %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row-fluid">
+         <div class="span10 offset1" >
+    	   {% placeholder 'content_top' %}
+        </div>
+    </div>
+
+
+    <!--tabs group section -->
+    <!--second row section-->
+    <div class="span8 " style='margin:0 auto;float:none;'>
+       {% placeholder 'content_middle' %}
+    </div>
+
+    <div class="row-fluid "  >
+       {% placeholder 'content_bottom' %}
+    </div>
+{% endblock %}
