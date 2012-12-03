@@ -44,7 +44,9 @@ FORM_TEMPLATES = getattr(settings, 'FORM_DESIGNER_FORM_TEMPLATES', (
     ('html/formdefinition/forms/as_table.html', _('as table')),
     ('html/formdefinition/forms/as_table_h.html', _('as table (horizontal)')),
     ('html/formdefinition/forms/as_ul.html', _('as unordered list')),
+ 
     ('html/formdefinition/forms/custom.html', _('custom implementation')),
+   
 ))
 
 # Sequence of two-tuples like (('your_app.models.ModelName', 'My Model'), ...) for limiting the models available to ModelChoiceField and ModelMultipleChoiceField.

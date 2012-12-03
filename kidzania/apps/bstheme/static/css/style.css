@@ -461,7 +461,9 @@ border-bottom-color:white;}
 	float: right;
 }
 
-
+.wrap{
+	margin-bottom: 15px;
+}
 
 
 /*dropdown menu bar*/
