@@ -36,6 +36,7 @@ CMS_PLUGIN_PROCESSORS = (
 WRAPPER_PLUGIN_TEMPLATES = (
     ('default.html', 'default'),
     ('activities.html', 'Establishments'),
+    ('home.html', 'Home sub section'),
     ('birthday.html', 'Image with paragraph'),
     ('template_1.txt', 'template_1'),
 )

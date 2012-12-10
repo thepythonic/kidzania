@@ -1,0 +1,18 @@
+<div class=" span6  secondary first offset1" >
+{% for plugin in plugins %}
+  {% if forloop.counter == 1 %}
+    {{ plugin|safe }}
+  {% else %}
+    {% if forloop.counter == 2 %}
+      <div style=" position: absolute;top: 0px;z-index: 0; left: 0px;">
+        {{ plugin|safe }}  
+      </div>
+    {% endif %}
+  {% endif %}
+{% endfor %}
+</div> 
+
+
+
+
+		
