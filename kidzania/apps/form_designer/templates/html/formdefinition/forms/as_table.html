@@ -1,5 +1,30 @@
-{% load friendly %}
-<form name="{{ form_definition.name }}" action="{{ form_definition.action }}" method="{{ form_definition.method }}" enctype="multipart/form-data">
+{% load friendly sekizai_tags %}
+
+    
+    {% addtoblock 'js' %}
+  
+    <script type="text/javascript">
+       
+         $(document).ready(function() { 
+            $("#form-{{ form_definition.name }}").submit(function() {
+                $.post($(this).attr("action"), $(this).serialize(), function(html) {
+                   $("#tab-{{ form_definition.name }}").html(html);
+              
+                });
+                return false; // prevent normal submit
+            });
+            
+        }); 
+    </script>
+
+  {% endaddtoblock %}
+{% if  form_success  %}
+<div id='success'>{{ form_definition.success_message }}</div>
+{% endif %}
+
+<form name="{{ form_definition.name }}" id='form-{{ form_definition.name }}' action='{% if tab.get_absolute_url %}{{ tab.get_absolute_url }}{% else %}{{ form_definition.action }}
+{% endif %}' method="{{ form_definition.method }}" enctype="multipart/form-data" >
+  
     <table>
         <tbody>
             {% for entry in logs %}
@@ -17,8 +42,9 @@
                         <!--<label for="{{ field.auto_id }}">{{ field.label }}</label>-->
                     </th>
                     <td>
-                        {{ field.errors }}
+                        
                         {{ field }}
+                        {{ field.errors }}
                     </td>
                 </tr>
                 {% endif %}
@@ -32,5 +58,9 @@
     {% for field in form.hidden_fields %}
         {{ field }}
     {% endfor %}
+    <input type='hidden' name='form_action' value='{{ tab.get_absolute_url }}'/>
     {% csrf_token %}
 </form>
+
+
+

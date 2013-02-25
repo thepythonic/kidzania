@@ -34,8 +34,8 @@ def process_form(request, form_definition, extra_context={}, disable_redirection
     if is_submit:
         if form.is_valid():
             # Handle file uploads using storage object
+            form_definition.action = request.path
             files = handle_uploaded_files(form_definition, form)
-
             # Successful submission
             messages.success(request, success_message)
             form_success = True
@@ -46,19 +46,26 @@ def process_form(request, form_definition, extra_context={}, disable_redirection
             if form_definition.success_redirect and not disable_redirection:
                 return HttpResponseRedirect(form_definition.action or '?')
             if form_definition.success_clear:
-                form = DesignedForm(form_definition) # clear form
+                form = DesignedForm(form_definition)
+
+                
         else:
             form_error = True
+            #print request
             messages.error(request, error_message)
+            form_definition.action = request.path
     else:
         if form_definition.allow_get_initial:
             form = DesignedForm(form_definition, initial_data=request.GET)
+            
         else:
             form = DesignedForm(form_definition)
+           
 
     context.update({
         'form_error': form_error,
         'form_success': form_success,
+        'messages_success' :messages.success(request,success_message),
         'form': form,
         'form_definition': form_definition
     })
