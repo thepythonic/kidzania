@@ -16,19 +16,19 @@
   </script>  
 {% endaddtoblock %}
 
-  	<div class="row">
-     	{% placeholder 'content_top' %}
-  	</div>
+    <div class="row">
+      {% placeholder 'content_top' %}
+    </div>
 <section class="row-fluid" id="secondary-row">
 
-  <div class="span8" style="margin-left: 408px;margin-top: -12px;">
+  <div class="span8" style="margin-left: 408px;margin-top: -12px;position: relative;z-index: 10;">
     <h1>
-        <div class="left-end-cap" style="float:left;">&nbsp;</div>
-        <div class="middle" style="float:left;">{%placeholder 'section-title'%}</div>
-        <div class="right-end-cap" style="float:left;">&nbsp;</div>
+        <div class="left-end-cap" >&nbsp;</div>
+        <div class="middle" > {%placeholder 'section-title'%}</div>
+        <div class="right-end-cap" >&nbsp;</div>
     </h1>
   </div>
-  <div class="span10 secondary offset1 " id="content_1" style="height:340px;margin-top: -26px;">
+  <div class="span10 secondary offset1 " id="content_1" style="height:340px;margin-top: -44px;">
     <div class="est-content" style="">
       {% placeholder  'content' %}
       </div>                        
@@ -41,7 +41,7 @@
     <section class="row-fluid" >
 
     
-            	{% placeholder 'block_middle%}
+              {% placeholder 'block_middle%}
     </section>
       
      <!--end of third row-->
@@ -49,7 +49,7 @@
      <!--small slider-->
     <section class="row-fluid">
 
-	        {% placeholder 'block-bottom'%}
+          {% placeholder 'block-bottom'%}
     </section>
                 
       <!--end of small slider-->
