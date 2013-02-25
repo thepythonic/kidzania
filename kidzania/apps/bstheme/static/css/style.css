@@ -8,9 +8,6 @@ body{
 	background-position:center 0px;
 	margin:auto;}
 	
-p{
-	margin: 10px;}	
-	
 #background-image {
 background-image:url(../img/bg_buttom.png);
 background-repeat:repeat-x;
@@ -40,7 +37,6 @@ margin-right: 10px;
 padding-left: 80px;
 /*padding-right: 80px;*/
 }
-
 
 
 #header {
@@ -467,7 +463,6 @@ border-bottom-color:white;}
 
 .wrap{
 	margin-bottom: 15px;
-	/*margin-left: 95px;*/
 }
 
 
@@ -1182,8 +1177,6 @@ margin:18px 0 18px 0;}
 .form-horizontal .controls {
 margin-left:10px;
 }
-.control-group {
-margin-top: 10px;}
 
 .controls input, textarea{
 	width:420px;
@@ -1211,8 +1204,6 @@ margin-top: 10px;}
 	color:#e07b00;
 	margin: 0;
 	}
-	.tab-content {
-	padding: 10px;}
 /*Teacher page*/
 
 .place-img-right{
@@ -1241,34 +1232,27 @@ margin-right: 10px;
 	-moz-border-radius: 10px 10px 0px 0px;
 	padding: 5px;
 }
-
-h1{
-	font-size:0;}		
+		
 				
 h1 .right-end-cap {
 background-image:url(../img/logo.png); 
 background-repeat:no-repeat;
 background-position:0 -2147px;
 height: 41px;
-width: 18px;
-display: inline-block;}
+width: 18px;}
 
 h1 .middle {
 background-image:url(../img/gradient.png);
 background-repeat:repeat-x;
 height: 41px;
 color: white;
-font-size: 16px;
-/*font-family: "Lucida Bright",Georgia,Times,"Times New Roman",serif;*/
+font-size: 18px;
+font-family: "Lucida Bright",Georgia,Times,"Times New Roman",serif;
 font-weight: 700;
 text-align: center;
-/*line-height: 35px;*/
-display: inline-block;
-vertical-align: top;
-/*padding-top: 16px;
-padding-bottom: 6px;*/
-
+line-height: 35px;
 }
+
 
 
 h1 .left-end-cap {
@@ -1277,7 +1261,6 @@ background-repeat:no-repeat;
 background-position:0 -2227px;
 height: 41px;
 width: 13px;
-display: inline-block;
 }
 
 
@@ -1318,8 +1301,7 @@ background-position: right;
 
 
 .plan-info{
-	margin-top:-31px;
-	text-align:center;}	
+	margin-top:-31px;}	
 	
 	
 .plan-details-info{
