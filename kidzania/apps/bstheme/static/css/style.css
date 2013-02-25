@@ -797,7 +797,7 @@ font-size: 11px;
 color:white;}
 
 
-.tertiary li:hover {
+.tertiary li:hover  ,li.active{
 background-image:url(../img/logo.png);
 background-repeat:no-repeat;
 background-position:0 -2308px;
@@ -810,6 +810,10 @@ color:#888888;}
 .nav.tertiary li:hover a{
 color:#888888;}
 
+
+
+.nav.tertiary li.active a{
+color:#888888;}
 
 .tertiary li:nth-of-type(1) .kid-icon {
 background-image:url(../img/logo.png);
@@ -1239,7 +1243,9 @@ background-image:url(../img/logo.png);
 background-repeat:no-repeat;
 background-position:0 -2147px;
 height: 41px;
-width: 18px;}
+width: 18px;
+float: left;
+}
 
 h1 .middle {
 background-image:url(../img/gradient.png);
@@ -1251,6 +1257,7 @@ font-family: "Lucida Bright",Georgia,Times,"Times New Roman",serif;
 font-weight: 700;
 text-align: center;
 line-height: 35px;
+float: left;
 }
 
 
@@ -1261,6 +1268,7 @@ background-repeat:no-repeat;
 background-position:0 -2227px;
 height: 41px;
 width: 13px;
+float: left;
 }
 
 
